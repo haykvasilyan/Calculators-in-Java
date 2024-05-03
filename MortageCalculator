@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        double m;    //monthly payment
+
+        System.out.println("This calculator made for calculating " +
+                "your monthly mortage payments.");
+        System.out.println("Enter your principal: ");
+        int p = scanner.nextInt(); //principal
+        if ( p<=0 ) {
+            System.out.println("THERES CANT NEGATIVE AMOUNT OF MONEY!" +
+                    "\nIDIOT! ");
+                    }
+
+        System.out.println("Enter your annual interest rate: ");
+        double a = scanner.nextFloat(); //annual interest rate
+        double an = a/100;   //"an" was  made for percentage ←-(^o^)ﾉ
+        double r = an/12;    //monthly interest rate
+        if ( a<=0 ) {
+            System.out.println("ALSO WRONG" +
+                    "\nIDIOT! ");
+        }
+
+        System.out.println("How many years you gonna pay for the mortage: ");
+        byte y = scanner.nextByte();
+        int n = y*12; //number of payments
+        if ( n<=0 ) {
+            System.out.println("THERES CANT BE NEGATIVE AMOUNT OF PAYMENTS!" +
+                    "\nIDIOT! ");
+        }
+
+
+        m = ( ( r * (Math.pow((1 + r), n)) ) / (Math.pow((1 + r), n) - 1)) * p;
+        System.out.println("Your monthly payment is: " + m);
+
+
+    }
+
+
+
+}
