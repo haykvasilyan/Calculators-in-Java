@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter 1st number: ");
+        float num1 = scanner.nextFloat();
+
+        System.out.print("Enter 2nd number: ");
+        float num2 = scanner.nextFloat();
+
+        System.out.println("Enter \"+\" for convocation․\nEnter \"-\" for subtraction․\nEnter \"*\" for multiplication․ " +
+                "\nEnter \"/\" to divide․\nEnter \"res\"․ for residual.\nEnter \"%\"․ for percentage.");
+        System.out.println("Action: ");
+        scanner.nextLine();
+        String act;
+        act = scanner.nextLine();
+
+
+        if (act.equals("+")) {
+            float nump = num1 + num2;
+            System.out.println("Answer: " + nump);
+        } else if (act.equals("-")) {
+            float numm = num1 - num2;
+            System.out.println("answer: " + numm);
+        } else if (act.equals("*")) {
+            float numa = num1 * num2;
+            System.out.println("Answer: " + numa);
+        } else if (num2 == 0 && act.equals("/")) {
+            System.out.print("You cant divide to 0. IDIOT!");
+
+        } else if (act.equals("/") && num2 != 0) {
+            float numb = num1 / num2;
+            System.out.println("Answer: " + numb);
+        } else if (act.equals("res")) {
+            float nummn = num1 % num2;
+            float nummb = num1 / num2;
+            System.out.println("Answer: " + nummb + "+" + nummn);
+        } else if (act.equals("%")) {
+            float x = num2 * 100;
+            float perc = x / num1;
+            System.out.println("Answer: " + perc + "%");
+        } else {
+            System.out.println("You need to choose an action.");
+
+        }
+    }
+}
